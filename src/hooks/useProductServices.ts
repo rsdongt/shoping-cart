@@ -7,7 +7,7 @@ export const useProductServices = (): TProductServices => {
 
   // RETRIEVE DATA FROM JSON FILE
   onMounted(() => {
-    fetch("src/assets/products.json")
+    fetch("/public/products.json")
       .then((res) => res.json())
       .then((data) => {
         products.value = data;
@@ -73,7 +73,7 @@ export const useProductServices = (): TProductServices => {
 
   // SEARCH PRODUCTS BY NAME
   const searchProductsByName = async (searchTerm: string) => {
-    const response = await fetch("src/assets/products.json");
+    const response = await fetch("/public/products.json");
 
     const fetchedProducts = await response.json();
 
